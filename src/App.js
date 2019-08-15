@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import EmailTable from './containers/email-table';
 import { Provider } from 'react-redux';
+import store from './store';
 
 function detectMobile() {
   if(window.innerWidth <= 800) {

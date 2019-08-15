@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import icon_mail_sp from '../../static/svg/icon_mail_sp.svg';
+import icon_arrow02 from '../../static/svg/icon_arrow02.svg';
 import Badge from 'react-bootstrap/Badge';
 
 export function EmailItemMobile(props) {
   const { sender, receiver, remaining_email, subject, date, body, is_expanded, onClick } = props;
 
   return (
-    <div>
+    <div onClick={onClick}>
       <img src={icon_mail_sp} height='20px' width='20px' alt='email' />
       <h5>{sender}</h5>
       <h5>{receiver}</h5>
@@ -18,6 +19,8 @@ export function EmailItemMobile(props) {
               </>
             }
       <h5>{subject}</h5>
+      <h5>{date}</h5>
+      <img src={icon_arrow02} height='20px' width='20px' alt='email' />
       {is_expanded && <div>{body}</div>}
     </div>
   );

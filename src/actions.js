@@ -1,5 +1,5 @@
 export function getEmailData() {
-  const emailData = require('./data/email-data.json');
+  const emailData = require('./data/emailData.json');
   return new Promise((resolve, reject) => {
     setTimeout(() => resolve(emailData), 1000);
   })

@@ -1,8 +1,8 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
-import {EmailItem} from '../email-item/index';
+import { EmailItem } from '../email-item/index';
 
-export default function EmailTable(props) {
+export function DesktopEmailItems(props) {
   // const { isMobile } = props;
 
   const tableHeader = (
