@@ -1,29 +1,23 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
-import { EmailItem } from '../email-item/index';
+import { EmailItemDesktop } from '../email-item/desktop';
 
-export function DesktopEmailItems(props) {
-  // const { isMobile } = props;
-
-  const tableHeader = (
-      <tr>
-        <th>From</th>
-        <th>To</th>
-        <th>Subject</th>
-        <th>Date</th>
-      </tr>
-  );
-
+export function DesktopEmail(props) {
+  const { dataSource, onEmailClick } = props;
+  console.log(props);
   return (
-    <div>
-      <Table>
-        <thead>
-          {tableHeader}
-        </thead>
-        <tbody>
-          {EmailItem}
-        </tbody>
-      </Table>
-    </div>
+    <Table>
+      <thead>
+        <tr>
+          <th>From</th>
+          <th>To</th>
+          <th>Subject</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {dataSource.map((item, index) => <EmailItemDesktop key={index} {...item} onClick={() => onEmailClick(item.id)} />)}
+      </tbody>
+    </Table>
   );
 }

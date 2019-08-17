@@ -1,0 +1,49 @@
+.emailTopRow {
+  position: relative;
+}
+
+.mobileMailIcon {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  padding-right: 8px;
+}
+
+.emailSender {
+  font-weight: bold;
+  padding-left: 45px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.emailReceiver {
+  padding-left: 45px;
+}
+
+.senderReceiver {
+  display: inline-block;
+}
+
+.mobileDate {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.dateArrow {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+.extraReceivers {
+  position:absolute;
+  top: 25px;
+  right: 15px;
+}
+
+.mobileSubject {
+  font-size: 18px;
+  padding-left: 20px;
+}

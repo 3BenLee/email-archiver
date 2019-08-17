@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import EmailTable from './containers/email-table';
+import Email from './containers/email';
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -14,11 +14,10 @@ function detectMobile() {
 
 function App() {
   const isMobile = detectMobile();
-  console.log(isMobile);
   return (
     <Provider store={store}>
       <div className="App">
-        <EmailTable isMobile={isMobile} />
+        <Email isMobile={isMobile} />
       </div>
     </Provider>
   );

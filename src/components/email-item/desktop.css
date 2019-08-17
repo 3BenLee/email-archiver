@@ -1,0 +1,15 @@
+.receiver {
+  display: inline-block;
+}
+
+/* .plus {
+  margin-left: 30px;
+} */
+
+.dateAndAttachment {
+  display: flex;
+}
+
+.emailAttachment {
+  margin-right: 10px;
+}

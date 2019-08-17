@@ -2,29 +2,49 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Badge from 'react-bootstrap/Badge';
+import icon_clip from '../../static/svg/icon_clip.svg'
+import './desktop.css';
 
 export function EmailItemDesktop(props) {
-  const { sender, receiver, remaining_email, subject, date, body, is_expanded, onClick } = props;
+  const { sender, receiver, remaining_email, subject, attachment, date, body, is_expanded, onClick } = props;
+
+  const emailAttachment = attachment && (
+    <div className='emailAttachment'>
+      <img src={icon_clip} height='20px' width='20px' alt='clip' />
+    </div>
+  );
+
+  const emailReceiver = (
+    <div className='receiver'>
+      {receiver.length > 1 ? `${receiver[0]}, ...` : receiver[0]}
+      {remaining_email && (
+        <h6 className='plusBadge'>
+          <Badge variant='secondary'>+{remaining_email}</Badge>
+        </h6>
+      )}
+    </div>
+  );
+
+  const emailBody = is_expanded && (
+    <tr>
+      <td colSpan={4}>{body}</td>
+    </tr>
+  );
+
   return (
     <>
       <tr onClick={onClick}>
-          <td>{sender}</td>
-          <td>{receiver[0]}
-            {remaining_email > 0 &&
-              <>
-                ...
-                <h6><Badge variant="secondary">+{remaining_email}</Badge></h6>
-              </>
-            }
-          </td>
-          <td>{subject}</td>
-          <td>{date}</td>
-        </tr>
-        {is_expanded && <tr>
-          <td colSpan={4}>{body}</td>
-        </tr>}
+        <td>{sender}</td>
+        <td>{emailReceiver}</td>
+        <td>{subject}</td>
+        <td className='dateAndAttachment'>
+        {emailAttachment}
+        {date}
+        </td>
+      </tr>
+      {emailBody}
     </>
-  )
+  );
 }
 
 EmailItemDesktop.propTypes = {
