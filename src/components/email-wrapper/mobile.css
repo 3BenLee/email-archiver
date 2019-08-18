@@ -1,9 +1,15 @@
 ul {
+  color: #6a6a6a;
   list-style-type: none;
-  background-color: #e9ecef;
+  background-color: #e8e8e8;
   padding: 10px 20px;
 }
 
 li {
+  font-weight: bold;
   display: inline;
+}
+
+#firstListItem {
+  color: black;
 }

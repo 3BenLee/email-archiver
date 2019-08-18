@@ -1,15 +1,7 @@
-.receiver {
-  display: inline-block;
+.desktopEmailAttachment {
+  float: right;
 }
 
-/* .plus {
-  margin-left: 30px;
-} */
-
-.dateAndAttachment {
-  display: flex;
-}
-
-.emailAttachment {
-  margin-right: 10px;
+.tableRow {
+  border-bottom:1pt solid lightgray;
 }

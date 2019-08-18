@@ -10,9 +10,9 @@ export function MobileEmail(props) {
   const mobileHeader = (
     <>
       <ul>
-        <li><strong>From </strong><img src={icon_arrow01} height='10px' width='10px' alt='up arrow' /> | </li>
-        <li>To | </li>
-        <li>Subject | </li>
+        <li id='firstListItem'>From <img src={icon_arrow01} height='10px' width='10px' alt='up arrow' /></li>
+        <li> |  To  |  </li>
+        <li>Subject  |  </li>
         <li>Date</li>
       </ul>
     </>

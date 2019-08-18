@@ -1,7 +1,7 @@
 import { FETCH_EMAIL, VIEW_EMAIL } from '../actions/types';
 
 const initialState = {
-  emailData: []
+  emailData: [],
 };
 
 export default function(state = initialState, action) {
