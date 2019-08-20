@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import DatePicker from '../../components/date-picker/date-picker';
 import './header.css';
 
 
@@ -14,7 +13,6 @@ function Header(props) {
 
   return (
     <>
-      <DatePicker/>
       <div className='headerResults'><strong>Results: {emailCount} mail(s)</strong></div>
     </>
   );
