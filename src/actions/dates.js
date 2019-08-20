@@ -5,6 +5,6 @@ export const getDates = (start, end) => {
   console.log('actions', start, end);
   return {
     type: GET_DATES,
-    payload: start, end
+    payload: {start, end}
   };
 }

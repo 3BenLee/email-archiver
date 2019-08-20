@@ -42,14 +42,14 @@ export function EmailItemMobile(props) {
 
 
   const emailBody = is_expanded && (
-    <p>
+    <p className='mobileBody'>
       {body}
     </p>
   );
 
   return (
     <>
-      <div onClick={onClick}>
+      <div className='emailItemMobileContainer' onClick={onClick}>
         <div className='emailTopRow'>
           <img className='mobileMailIcon' src={icon_mail_sp} height='30px' width='30px' alt='email' />
           <div className='senderAndReceiver'>

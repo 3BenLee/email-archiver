@@ -4,8 +4,7 @@ import { EmailItemMobile } from '../email-item/mobile';
 import './mobile.css';
 
 export function MobileEmail(props) {
-  console.log('mobile', props);
-  const { dataSource } = props;
+  const { dataSource, onEmailClick } = props;
 
   const mobileHeader = (
     <>
@@ -21,7 +20,7 @@ export function MobileEmail(props) {
     <div>
       {mobileHeader}
       <div>
-        {dataSource.map( (item, index) => <EmailItemMobile key={index} {...item} />)}
+        {dataSource.map( (item, index) => <EmailItemMobile key={index} {...item} onClick={() => onEmailClick(item.id)} />)}
       </div>
     </div>
   );

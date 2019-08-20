@@ -16,8 +16,7 @@ class DatePicker extends React.Component {
   }
   render () {
 
-    const { startDate, endDate } = this.props;
-
+    const { dates } = this.props;
     return (
       <div className='outerCalendarContainer'>
         <div className='innerCalendarContainer'>
@@ -26,7 +25,7 @@ class DatePicker extends React.Component {
                 <img src={icon_calendar} height='20px' width='20px' alt='calendar'/>
               </button>
           </DateRangePicker>
-          <div className='dateRangeInput'>start - end</div>
+          <div className='dateRangeInput'>{dates.endDate}</div>
         </div>
         <div className='searchIcon'>
           <img src={icon_search} height='20px' width='20px' alt='search'/>
@@ -37,9 +36,9 @@ class DatePicker extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
-    startDate: state.startDate,
-    endDate: state.endDate
+    dates: state.dates
   }
 }
 

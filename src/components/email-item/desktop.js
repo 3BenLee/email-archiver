@@ -40,13 +40,13 @@ export function EmailItemDesktop(props) {
 
   const emailBody = is_expanded && (
     <tr>
-      <td colSpan={4}>{body}</td>
+      <td colSpan={6}>{body}</td>
     </tr>
   );
 
   return (
     <>
-      <tr className='tableRow' onClick={onClick}>
+      <tr className='desktopTableRow' onClick={onClick}>
         <td>{sender}</td>
         <td>{emailReceiver}</td>
         <td>{otherReceivers}</td>

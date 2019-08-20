@@ -2,6 +2,11 @@
   float: right;
 }
 
-.tableRow {
+.desktopTableRow {
   border-bottom:1pt solid lightgray;
+  cursor: pointer;
+}
+
+.desktopTableRow:hover {
+  color: blue;
 }
