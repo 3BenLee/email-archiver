@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { EmailWrapper } from '../../components/email-wrapper';
+import Header from '../../components/header/header';
 import { fetchEmail, viewEmailBody } from '../../actions/email';
 import { getDates } from '../../actions/dates';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
@@ -13,7 +14,7 @@ import './index.css';
 class Email extends React.Component {
 
   componentDidMount() {
-    // this.props.dispatch(fetchEmail());
+    this.props.dispatch(fetchEmail());
   }
 
   handleEmailClick = (emailId) => {
@@ -29,11 +30,11 @@ class Email extends React.Component {
     }
 
   render() {
-    const { isMobile, email, dates } = this.props;
+    const { isMobile, email } = this.props;
 
     const datePickerInput = (
-      <div className='outerCalendarContainer'>
-        <div className='innerCalendarContainer'>
+      <div className= { this.props.ismobile ? 'mobileOuterCalendar' : 'desktopOuterCalendar'}>
+        <div className='innerCalendar'>
           <DateRangePicker onApply={this.handleChosenDates} startDate="1/1/2019" endDate="1/7/2019">
               <button>
                 <img src={icon_calendar} height='20px' width='20px' alt='calendar'/>
@@ -50,6 +51,7 @@ class Email extends React.Component {
     return (
       <div>
         {datePickerInput}
+        <Header/>
         {email.emailData.length > 0 && (
           <EmailWrapper
             isMobile={isMobile}

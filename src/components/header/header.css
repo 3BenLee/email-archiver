@@ -6,6 +6,8 @@
 
 .headerResults {
   display: inline-block;
+  margin-left: 5%;
+  Color: #6a6a6a;
 }
 
 input {

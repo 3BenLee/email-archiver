@@ -2,7 +2,6 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 import icon_arrow01 from '../../static/svg/icon_arrow01.svg';
 import { EmailItemDesktop } from '../email-item/desktop';
-import Header from '../header/header';
 import './desktop.css';
 
 export function DesktopEmail(props) {
@@ -10,7 +9,6 @@ export function DesktopEmail(props) {
 
   return (
     <div className='tableWrapper'>
-      <Header/>
       <Table responsive='sm desktopTable'>
         <thead>
           <tr className='topRow'>

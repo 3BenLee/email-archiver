@@ -25,13 +25,12 @@ export default function(state = initialState, action) {
       }
     case FETCH_EMAIL:
         const range = moment.range(initialState.dates.startDate, initialState.dates.endDate);
-        console.log('FETCH_EMAIL',range);
-        if (initialState.emailData.date.within(range))
+        console.log('FETCH_EMAIL',initialState.emailData, range);
+        // if (initialState.emailData.date.within(range))
       return {
         ...state,
         emailData: action.payload
       }
-      break;
     case VIEW_EMAIL:
       return {
         ...state,

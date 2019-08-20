@@ -6,7 +6,7 @@ import './mobile.css';
 export function MobileEmail(props) {
   const { dataSource, onEmailClick } = props;
 
-  const mobileHeader = (
+  const mobileTableIndex = (
     <>
       <ul>
         <li id='firstListItem'>From <img src={icon_arrow01} height='10px' width='10px' alt='up arrow' /></li>
@@ -18,7 +18,7 @@ export function MobileEmail(props) {
   );
   return (
     <div>
-      {mobileHeader}
+      {mobileTableIndex}
       <div>
         {dataSource.map( (item, index) => <EmailItemMobile key={index} {...item} onClick={() => onEmailClick(item.id)} />)}
       </div>

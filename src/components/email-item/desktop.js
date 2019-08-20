@@ -52,7 +52,7 @@ export function EmailItemDesktop(props) {
         <td>{otherReceivers}</td>
         <td>{subject}</td>
         <td>{desktopAttachment}</td>
-        <td className='dateAndAttachment'>
+        <td className='desktopDate'>
         {emailDate(date)}
         </td>
       </tr>

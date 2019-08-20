@@ -1,18 +1,28 @@
-.outerCalendarContainer {
+.mobileCalendarContainer {
   border-style: solid;
   border-color: lightgrey;
   border-width: 1px;
   border-radius: 8px;
-  background-color: lightgray;
+  background-color: #F5F5F5;
   width: 280px;
-  margin: 40px 0 20px 0;
+  margin: 20px 0 20px 5%;
 }
 
-.innerCalendarContainer {
+.desktopOuterCalendar {
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+  border-radius: 8px;
+  background-color: #F5F5F5;
+  width: 280px;
+  margin: 40px 0 20px 5%;
+}
+
+.innerCalendar {
   display: inline-block;
   width: 220px;
   border-style: solid;
-  border-color: lightgrey;
+  border-color: #F5F5F5;
   background-color: white;
   border-width: 1px;
   border-radius: 4px;
@@ -20,7 +30,7 @@
 }
 
 button {
-  background-color: none;
+  background-color: white;
   border: none;
   margin-left: 3px;
 }
