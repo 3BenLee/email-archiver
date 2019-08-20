@@ -2,9 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './header.css';
 
-
 function Header(props) {
-
   const emailCount = (
     <div className='emailCount'>
       {props.email.emailData.length}
@@ -12,9 +10,9 @@ function Header(props) {
   );
 
   return (
-    <>
-      <div className='headerResults'><strong>Results: {emailCount} mail(s)</strong></div>
-    </>
+    <div className='headerResults'>
+      Results: {emailCount} mail(s)
+    </div>
   );
 }
 

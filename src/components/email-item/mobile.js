@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import icon_mail_sp from '../../static/svg/icon_mail_sp.svg';
 import icon_arrow02 from '../../static/svg/icon_arrow02.svg';
 import Badge from 'react-bootstrap/Badge';
-import icon_clip from '../../static/svg/icon_clip.svg'
+import icon_clip from '../../static/svg/icon_clip.svg';
 import moment from 'moment';
 import './mobile.css';
 
@@ -39,7 +39,6 @@ export function EmailItemMobile(props) {
     }
     return day;
   }
-
 
   const emailBody = is_expanded && (
     <p className='mobileBody'>

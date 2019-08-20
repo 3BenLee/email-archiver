@@ -1,21 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchEmailByStartEndDate, viewEmailBody, storeDate } from '../../actions/email';
 import { EmailWrapper } from '../../components/email-wrapper';
+import logo from '../../static/png/logo.png';
 import Header from '../../components/header/header';
-import { fetchEmail, viewEmailBody } from '../../actions/email';
-import { getDates } from '../../actions/dates';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-daterangepicker/daterangepicker.css';
+import moment from 'moment';
 import icon_calendar from '../../static/svg/icon_calender.svg';
 import icon_search from '../../static/svg/icon_search.svg';
 import './index.css';
 
 class Email extends React.Component {
-
-  componentDidMount() {
-    this.props.dispatch(fetchEmail());
-  }
 
   handleEmailClick = (emailId) => {
     const { email: { emailData } } = this.props;
@@ -23,24 +20,25 @@ class Email extends React.Component {
   }
 
   handleChosenDates = (onApply, picker) => {
-    console.log(picker.startDate, picker.endDate);
-    this.props.dispatch(getDates(picker.startDate, picker.endDate));
-    this.props.dispatch(fetchEmail());
-    console.log('Within Check!!!!', this.email.emailData.date);
-    }
+    const { startDate, endDate } = picker;
+    this.props.dispatch(fetchEmailByStartEndDate({ startDate, endDate }));
+    this.props.dispatch(storeDate({ startDate, endDate }))
+  }
 
   render() {
-    const { isMobile, email } = this.props;
+    const { isMobile, email: { emailData, dates } } = this.props;
+    const start = moment(dates.startDate).format('L');
+    const end = moment(dates.endDate).format('L');
 
     const datePickerInput = (
       <div className= { this.props.ismobile ? 'mobileOuterCalendar' : 'desktopOuterCalendar'}>
         <div className='innerCalendar'>
           <DateRangePicker onApply={this.handleChosenDates} startDate="1/1/2019" endDate="1/7/2019">
-              <button>
-                <img src={icon_calendar} height='20px' width='20px' alt='calendar'/>
-              </button>
+            <button>
+              <img src={icon_calendar} height='23px' width='23px' alt='calendar'/>
+            </button>
           </DateRangePicker>
-          <div className='dateRangeInput'>Hello</div>
+          <div className='dateRangeInput'>{`${start} - ${end}`}</div>
         </div>
         <div className='searchIcon'>
           <img src={icon_search} height='20px' width='20px' alt='search'/>
@@ -48,22 +46,30 @@ class Email extends React.Component {
       </div>
     );
 
+    const placeholder = (
+      <div className={isMobile ? 'placeholderMobile' : 'placeholderDesktop'}>
+        <img src={logo} alt='archiver logo' />
+      </div>
+    );
+
+    const emailWrapper = (
+      <EmailWrapper
+        isMobile={isMobile}
+        dataSource={emailData}
+        onEmailClick={this.handleEmailClick}
+      />
+    );
+
     return (
-      <div>
+      <>
         {datePickerInput}
         <Header/>
-        {email.emailData.length > 0 && (
-          <EmailWrapper
-            isMobile={isMobile}
-            dataSource={email.emailData}
-            onEmailClick={this.handleEmailClick}
-          />
-        )}
-      </div>
-    )
+        {emailData.length <= 0 && !isMobile && <hr width='90%'/>}
+        {emailData.length <= 0 ? placeholder : emailWrapper}
+      </>
+    );
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {

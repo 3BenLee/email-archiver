@@ -24,7 +24,6 @@ export function EmailItemDesktop(props) {
     </div>
     );
 
-
   const emailDate = (date) => {
     let day;
     if(moment(date).format('YYYY MM DD') === moment().format('YYYY MM DD')) {
