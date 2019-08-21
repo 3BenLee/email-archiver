@@ -9,14 +9,12 @@ export function EmailItemDesktop(props) {
   const { sender, receiver, remaining_email, subject, attachment, date, body, is_expanded, onClick } = props;
 
   const emailReceiver = receiver.length > 1 ? `${receiver[0]}, ...` : receiver[0];
-
-
+  
   const otherReceivers = remaining_email > 0 && (
     <h6 className='plusBadge'>
       <Badge variant='secondary'>+{remaining_email}</Badge>
     </h6>
   );
-
 
   const desktopAttachment = attachment && (
     <div className='desktopEmailAttachment'>

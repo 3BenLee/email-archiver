@@ -16,12 +16,11 @@ export function MobileEmail(props) {
       </ul>
     </>
   );
+
   return (
     <>
       {dataSource.length > 0 && mobileTableIndex}
-      <div>
-        {dataSource.map( (item, index) => <EmailItemMobile key={index} {...item} onClick={() => onEmailClick(item.id)} />)}
-      </div>
+      {dataSource.map( (item, index) => <EmailItemMobile key={index} {...item} onClick={() => onEmailClick(item.id)} />)}
     </>
   );
 }

@@ -64,8 +64,8 @@ class Email extends React.Component {
       <>
         {datePickerInput}
         <Header/>
-        {emailData.length <= 0 && !isMobile && <hr width='90%'/>}
-        {emailData.length <= 0 ? placeholder : emailWrapper}
+        {!emailData.length && !isMobile && <hr/>}
+        {!emailData.length ? placeholder : emailWrapper}
       </>
     );
   }

@@ -1,4 +1,4 @@
-import { FETCH_EMAIL, VIEW_EMAIL, FETCH_EMAIL_BY_START_END_DATE, STORE_DATE } from '../actions/types';
+import { VIEW_EMAIL, FETCH_EMAIL_BY_START_END_DATE, STORE_DATE } from '../actions/types';
 
 const initialState = {
   emailData: [],
@@ -11,11 +11,6 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case FETCH_EMAIL_BY_START_END_DATE:
-      return {
-        ...state,
-        emailData: action.payload
-      }
-    case FETCH_EMAIL:
       return {
         ...state,
         emailData: action.payload

@@ -1,4 +1,3 @@
-export const FETCH_EMAIL = 'FETCH_EMAIL';
 export const FETCH_EMAIL_BY_START_END_DATE = 'FETCH_EMAIL_BY_START_END_DATE';
 export const VIEW_EMAIL = 'VIEW_EMAIL';
 export const STORE_DATE = 'STORE_DATE';

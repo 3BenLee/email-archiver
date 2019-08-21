@@ -1,17 +1,5 @@
-import { FETCH_EMAIL, FETCH_EMAIL_BY_START_END_DATE, VIEW_EMAIL, STORE_DATE } from './types';
+import { FETCH_EMAIL_BY_START_END_DATE, VIEW_EMAIL, STORE_DATE } from './types';
 import emailData from '../data/emailData';
-
-export const fetchEmail = () => {
-  const data = emailData.map(item => {
-    item.remaining_email = item.receiver.length - 1;
-    return item;
-  });
-
-  return {
-    type: FETCH_EMAIL,
-    payload: data
-  };
-}
 
 export const fetchEmailByStartEndDate = (payload) => {
   const { startDate, endDate } = payload;
